@@ -19,9 +19,10 @@ public class PlumberParadise extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(0, 0, 1, 1);
+		//ScreenUtils.clear(0, 0, 1, 1);
 		batch.begin();
 		batch.draw(img, 100, 200);
+		batch.draw(img, 500, 300);
 		batch.end();
 	}
 	
