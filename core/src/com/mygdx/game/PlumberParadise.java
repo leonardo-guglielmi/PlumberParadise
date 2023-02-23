@@ -1,10 +1,9 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
-
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
 
 public class PlumberParadise extends ApplicationAdapter {
 	private SpriteBatch batch;
@@ -26,6 +25,10 @@ public class PlumberParadise extends ApplicationAdapter {
 	public void render () {
 		//ScreenUtils.clear(0, 0, 1, 1);
 		batch.begin();
+
+		// test for pressed-key listener
+		batch.draw(player.getTexture(), player.getPosX(), player.getPosY());
+		Gdx.input.setInputProcessor(player);
 		batch.draw(player.getTexture(), player.getPosX(), player.getPosY());
 		batch.end();
 	}
