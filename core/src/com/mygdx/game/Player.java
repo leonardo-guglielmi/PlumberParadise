@@ -1,5 +1,6 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.InputProcessor;
 
@@ -69,7 +70,22 @@ public class Player implements InputProcessor{
     // overrided methods from com.badlogic.gdx.InputProcessor interface
     @Override
     public boolean keyDown(int keycode) {
-        return false;
+        switch(keycode){
+            case Input.Keys.UP:
+                move(0,50);
+                return true;
+            case Input.Keys.DOWN:
+                move(0,-50);
+                return true;
+            case Input.Keys.LEFT:
+                move(-50,0);
+                return true;
+            case Input.Keys.RIGHT:
+                move(50, 0);
+                return true;
+            default:
+                return false;
+        }
     }
 
     @Override
